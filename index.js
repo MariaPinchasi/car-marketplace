@@ -351,7 +351,7 @@ const carAgencyManager={
         }
         return false;
     },
-// 10 getAllCarToBuy
+// 10 getAllCarToBuy-from previous index
 // @return {object[]} - allCarsToBuy - arrays of all cars objects
     getAllCarToBuy: function () {
         return this.agencies.flatMap (agencyObj=> agencyObj.cars).flatMap(carObj=>{
@@ -362,13 +362,13 @@ const carAgencyManager={
             return newArr;
         }); 
     },
-// 11 getAllCarToBuyByAgencyId
+// 11 getAllCarToBuyByAgencyId-from previous index
 // @param {string} - id of agency
 // @return {object[]} - carsArray - arrays of all models objects of specific agency
     getAllCarToBuyByAgencyId: function (agencyId) {
         return this.agencies.find(agency=>agency.agencyId===agencyId).cars.flatMap(carsObj=>carsObj.models);
     },
-// 12 getAllBrandsToBuyAgencyId
+// 12 getAllBrandsToBuyAgencyId-from previous index
 // @param {string} - agencyId -  id of agency
 // @return {string[]} - arrOfBrands - arrays of all brands name in specific agency
     getAllBrandsToBuyAgencyId: function (agencyId) {
